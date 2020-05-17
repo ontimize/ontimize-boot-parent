@@ -31,6 +31,8 @@
             <dependency>
                 <groupId>com.ontimize.boot</groupId>
                 <artifactId>ontimize-boot-dependencies</artifactId>
+                <version>${project.dependency.ontimize.boot.version}</version>
+                <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
@@ -51,5 +53,12 @@
         </dependencies>
 
     </dependencyManagement>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
