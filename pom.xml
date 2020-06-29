@@ -22,16 +22,16 @@
 
     <properties>
         <project.dependency.spring.boot.version>2.1.2.RELEASE</project.dependency.spring.boot.version>
-        <project.dependency.ontimize.boot.version>2.1.0</project.dependency.ontimize.boot.version>
+        <project.dependency.ontimize.boot.version>2.1.1</project.dependency.ontimize.boot.version>
         <project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
     </properties>
 	
 	<distributionManagement>
-		<repository>
-			<id>imatia-public</id>
-			<name>ontimize-release-opensource</name>
-			<url>https://artifactory.imatia.com/public-artifactory/ontimize-release-opensource</url>
-		</repository>
+	    <repository>
+			<id>public-artifactory</id>
+			<name>public-artifactory-releases</name>
+			<url>https://public-artifactory.imatia.com/artifactory/ontimize-release-opensource</url>
+	    </repository>
 		<snapshotRepository>
 			<id>imatia-artifactory</id>
 			<name>libs-snapshot-local</name>
