@@ -22,7 +22,7 @@
 
     <properties>
         <project.dependency.spring.boot.version>2.1.2.RELEASE</project.dependency.spring.boot.version>
-        <project.dependency.ontimize.boot.version>2.1.2</project.dependency.ontimize.boot.version>
+        <project.dependency.ontimize.boot.version>2.1.3</project.dependency.ontimize.boot.version>
         <project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
     </properties>
 	
