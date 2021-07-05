@@ -6,7 +6,7 @@
 
     <groupId>com.ontimize.boot</groupId>
     <artifactId>ontimize-boot-parent</artifactId>
-    <version>1.1.5</version>
+    <version>1.1.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <organization>
