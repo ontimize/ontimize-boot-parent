@@ -24,6 +24,7 @@
 		<project.dependency.spring.boot.version>2.5.0</project.dependency.spring.boot.version>
 		<project.dependency.ontimize.boot.version>3.0.0-SNAPSHOT</project.dependency.ontimize.boot.version>
 		<project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
+		<project.plugin.ontimize.openapi.generator>1.0.1-SNAPSHOT</project.plugin.ontimize.openapi.generator>
 	</properties>
 
 	<distributionManagement>
@@ -73,4 +74,32 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<activation>
+				<file>
+					<exists>src/main/ontimize/marker-ws-ontimize-openapi-generator</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.ontimize</groupId>
+						<artifactId>ontimize-openapi-generator</artifactId>
+						<version>${project.plugin.ontimize.openapi.generator}</version>
+						<executions>
+							<execution>
+								<id>generate-openapi</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
