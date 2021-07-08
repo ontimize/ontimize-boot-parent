@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ontimize.boot</groupId>
-    <artifactId>ontimize-boot-parent</artifactId>
-    <version>1.1.6-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<groupId>com.ontimize.boot</groupId>
+	<artifactId>ontimize-boot-parent</artifactId>
+	<version>3.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-    <organization>
-        <name>Imatia Innovation, S.L.</name>
-        <url>https://www.imatia.com/</url>
-    </organization>
+	<organization>
+		<name>Imatia Innovation, S.L.</name>
+		<url>https://www.imatia.com/</url>
+	</organization>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.2.RELEASE</version>
-    </parent>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.0</version>
+	</parent>
 
-    <properties>
-        <project.dependency.spring.boot.version>2.1.2.RELEASE</project.dependency.spring.boot.version>
-        <project.dependency.ontimize.boot.version>2.1.5</project.dependency.ontimize.boot.version>
-        <project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
-    </properties>
-	
+	<properties>
+		<project.dependency.spring.boot.version>2.5.0</project.dependency.spring.boot.version>
+		<project.dependency.ontimize.boot.version>3.0.0-SNAPSHOT</project.dependency.ontimize.boot.version>
+		<project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
+		<project.plugin.ontimize.openapi.generator>1.0.1-SNAPSHOT</project.plugin.ontimize.openapi.generator>
+	</properties>
+
 	<distributionManagement>
-	    <repository>
+		<repository>
 			<id>public-artifactory</id>
 			<name>public-artifactory-releases</name>
 			<url>https://public-artifactory.imatia.com/artifactory/ontimize-release-opensource</url>
-	    </repository>
+		</repository>
 		<snapshotRepository>
 			<id>imatia-artifactory</id>
 			<name>libs-snapshot-local</name>
@@ -39,39 +40,66 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.ontimize.boot</groupId>
-                <artifactId>ontimize-boot-dependencies</artifactId>
-                <version>${project.dependency.ontimize.boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${project.dependency.spring.boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.ontimize.boot</groupId>
+				<artifactId>ontimize-boot-dependencies</artifactId>
+				<version>${project.dependency.ontimize.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${project.dependency.spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${project.dependency.spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
 
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${project.dependency.spring.cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
-    </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+	<profiles>
+		<profile>
+			<activation>
+				<file>
+					<exists>src/main/ontimize/marker-ws-ontimize-openapi-generator</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.ontimize</groupId>
+						<artifactId>ontimize-openapi-generator</artifactId>
+						<version>${project.plugin.ontimize.openapi.generator}</version>
+						<executions>
+							<execution>
+								<id>generate-openapi</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
