@@ -83,22 +83,24 @@
 				</file>
 			</activation>
 			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.ontimize</groupId>
-						<artifactId>ontimize-openapi-generator</artifactId>
-						<version>${project.plugin.ontimize.openapi.generator}</version>
-						<executions>
-							<execution>
-								<id>generate-openapi</id>
-								<phase>generate-sources</phase>
-								<goals>
-									<goal>generate</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>com.ontimize</groupId>
+							<artifactId>ontimize-openapi-generator</artifactId>
+							<version>${project.plugin.ontimize.openapi.generator}</version>
+							<executions>
+								<execution>
+									<id>generate-openapi</id>
+									<phase>generate-sources</phase>
+									<goals>
+										<goal>generate</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
 			</build>
 		</profile>
 	</profiles>
