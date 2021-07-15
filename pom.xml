@@ -6,7 +6,7 @@
 
     <groupId>com.ontimize.boot</groupId>
     <artifactId>ontimize-boot-parent</artifactId>
-    <version>1.1.5</version>
+    <version>1.1.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <organization>
@@ -22,7 +22,7 @@
 
     <properties>
         <project.dependency.spring.boot.version>2.1.2.RELEASE</project.dependency.spring.boot.version>
-        <project.dependency.ontimize.boot.version>2.1.5</project.dependency.ontimize.boot.version>
+        <project.dependency.ontimize.boot.version>2.1.6</project.dependency.ontimize.boot.version>
         <project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
     </properties>
 	
