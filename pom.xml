@@ -6,7 +6,7 @@
 
 	<groupId>com.ontimize.boot</groupId>
 	<artifactId>ontimize-boot-parent</artifactId>
-	<version>3.1.0</version>
+	<version>3.2.0</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -25,6 +25,12 @@
 	<url>https://www.ontimize.com</url>
 
 	<developers>
+		<developer>
+			<name>Cristóbal Miguel Vázquez Carde</name>
+			<email>cmiguel.vazquez@imatia.com</email>
+			<organization>Imatia Innovation</organization>
+			<organizationUrl>http://imatia.com</organizationUrl>
+		</developer>
 		<developer>
 			<name>Enrique Álvarez Pereira</name>
 			<email>enrique.alvarez@imatia.com</email>
@@ -84,8 +90,9 @@
 
 	<properties>
 		<project.dependency.spring.boot.version>2.5.0</project.dependency.spring.boot.version>
-		<project.dependency.ontimize.boot.version>3.1.0</project.dependency.ontimize.boot.version>
+		<project.dependency.ontimize.boot.version>3.2.0</project.dependency.ontimize.boot.version>
 		<project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
+		<project.plugin.ontimize.openapi.generator>1.0.1</project.plugin.ontimize.openapi.generator>
 		<!-- =========================================================== -->
 		<!-- Plugin versions -->
 		<!-- =========================================================== -->
@@ -254,6 +261,31 @@
 									<keyname>${gpg.keyname}</keyname>
 									<passphraseServerId>${gpg.keyname}</passphraseServerId>
 								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<activation>
+				<file>
+					<exists>src/main/ontimize/marker-ws-ontimize-openapi-generator</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.ontimize</groupId>
+						<artifactId>ontimize-openapi-generator</artifactId>
+						<version>${project.plugin.ontimize.openapi.generator}</version>
+						<executions>
+							<execution>
+								<id>generate-openapi</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>generate</goal>
+								</goals>
 							</execution>
 						</executions>
 					</plugin>
