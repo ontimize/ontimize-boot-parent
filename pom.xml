@@ -107,7 +107,6 @@
 				<artifactId>ontimize-boot-dependencies</artifactId>
 				<version>${project.dependency.ontimize.boot.version}</version>
 				<type>pom</type>
-				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
