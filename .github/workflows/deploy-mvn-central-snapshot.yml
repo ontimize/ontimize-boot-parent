@@ -29,7 +29,10 @@ jobs:
              [{ "id": "ossrh",
              "username": "${{ secrets.MAVEN_USERNAME }}", 
              "password": "${{ secrets.MAVEN_CENTRAL_TOKEN }}",
-             "configuration": {"privateKey": "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}", "passphrase": "${{ secrets.MAVEN_GPG_PASSPHRASE }}"}
+             "configuration": {
+                "privateKey": "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}", 
+                "passphrase": "${{ secrets.MAVEN_GPG_PASSPHRASE }}"
+               }
              }]
       - name: Check files
         run: |
