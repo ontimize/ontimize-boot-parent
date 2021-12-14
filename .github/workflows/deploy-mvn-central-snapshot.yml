@@ -14,6 +14,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
           overwrite-settings: false
       - name: Set up settigs.xml
         uses: s4u/maven-settings-action@v2.4.1
@@ -22,7 +23,7 @@ jobs:
           githubServer: false
           mirrors: '[{"id": "s01-sonatype", "name": "Repository name from Maven Central SNAPSHOTS", "mirrorOf": "sonatype-snapshots", "url": "https://s01.oss.sonatype.org/content/repositories/snapshots/"}]'
           servers: |
-            [{ "id": "ossrh", "username": "${{ secrets.MAVEN_USERNAME }}", "password": "${{ secrets.MAVEN_CENTRAL_TOKEN }}", "privateKey": "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}", "passphrase": "${{ secrets.MAVEN_GPG_PASSPHRASE }}" }]
+            [{ "id": "ossrh", "username": "${{ secrets.MAVEN_USERNAME }}", "password": "${{ secrets.MAVEN_CENTRAL_TOKEN }}", "passphrase": "${{ secrets.MAVEN_GPG_PASSPHRASE }}" }]
       - name: Check files
         run: |
           mvn -v
