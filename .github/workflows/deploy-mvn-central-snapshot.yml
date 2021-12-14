@@ -28,5 +28,5 @@ jobs:
           mvn -v
           java -version
           cat $HOME/.m2/settings.xml
-      - name: Publish to Apache Maven Central
-        run: mvn -U clean deploy -Pgenerate-version
+#      - name: Publish to Apache Maven Central
+#        run: mvn -U clean deploy -Pgenerate-version
