@@ -19,7 +19,8 @@ jobs:
         uses: s4u/maven-settings-action@v2.4.1
         with:
           sonatypeSnapshots: true
-          servers: [{ "id": "ossrh", "username": ${{ secrets.MAVEN_USERNAME }}, "password": ${{ secrets.MAVEN_CENTRAL_TOKEN }}, "privateKey": ${{ secrets.MAVEN_GPG_PASSPHRASE }}, "passphrase": ${{ secrets.MAVEN_GPG_PASSPHRASE }} }]
+          servers: |
+            [{ "id": "ossrh", "username": ${{ secrets.MAVEN_USERNAME }}, "password": ${{ secrets.MAVEN_CENTRAL_TOKEN }}, "privateKey": ${{ secrets.MAVEN_GPG_PASSPHRASE }}, "passphrase": ${{ secrets.MAVEN_GPG_PASSPHRASE }} }]
       - name: Check files
         run: |
           mvn -v
