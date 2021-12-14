@@ -20,7 +20,7 @@ jobs:
         with:
           sonatypeSnapshots: true
           servers: |
-            [{ "id": "ossrh", "username": ${{ secrets.MAVEN_USERNAME }}, "password": ${{ secrets.MAVEN_CENTRAL_TOKEN }}, "privateKey": ${{ secrets.MAVEN_GPG_PASSPHRASE }}, "passphrase": ${{ secrets.MAVEN_GPG_PASSPHRASE }} }]
+            [{ "id": "ossrh", "username": "${{ secrets.MAVEN_USERNAME }}", "password": "${{ secrets.MAVEN_CENTRAL_TOKEN }}", "privateKey": "${{ secrets.MAVEN_GPG_PASSPHRASE" }}, "passphrase": "${{ secrets.MAVEN_GPG_PASSPHRASE" }} }]
       - name: Check files
         run: |
           mvn -v
