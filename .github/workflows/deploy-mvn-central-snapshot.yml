@@ -20,20 +20,9 @@ jobs:
         with:
           sonatypeSnapshots: true
           githubServer: false
-          mirrors: |
-            [{"id": "s01-sonatype", 
-            "name": "Repository name from Maven Central SNAPSHOTS", 
-            "mirrorOf": "sonatype-snapshots", 
-            "url": "https://s01.oss.sonatype.org/content/repositories/snapshots/"}]
+          mirrors: '[{"id": "s01-sonatype", "name": "Repository name from Maven Central SNAPSHOTS", "mirrorOf": "sonatype-snapshots", "url": "https://s01.oss.sonatype.org/content/repositories/snapshots/"}]'
           servers: |
-             [{ "id": "ossrh",
-             "username": "${{ secrets.MAVEN_USERNAME }}", 
-             "password": "${{ secrets.MAVEN_CENTRAL_TOKEN }}",
-             "configuration": {
-                "privateKey": "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}", 
-                "passphrase": "${{ secrets.MAVEN_GPG_PASSPHRASE }}"
-               }
-             }]
+            [{ "id": "ossrh", "username": "${{ secrets.MAVEN_USERNAME }}", "password": "${{ secrets.MAVEN_CENTRAL_TOKEN }}", "privateKey": "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}", "passphrase": "${{ secrets.MAVEN_GPG_PASSPHRASE }}" }]
       - name: Check files
         run: |
           mvn -v
