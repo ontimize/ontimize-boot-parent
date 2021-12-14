@@ -30,10 +30,6 @@ jobs:
               "password": ${{ secrets.MAVEN_CENTRAL_TOKEN }}
             }]
           properties: '[{"gpg-private-key": ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} }, {"gpg-passphrase": ${{ secrets.MAVEN_GPG_PASSPHRASE }} }]'
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.2
-        with:
-          maven-version: 3.6.3
       - name: Check files
         run: |
           mvn -v
