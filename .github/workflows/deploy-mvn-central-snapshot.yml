@@ -10,7 +10,7 @@ jobs:
       - name : Checkout repository code
         uses: actions/checkout@v2
       - name: Setup Java JDK
-        uses: ontimize/setup-java-maven-gitAction@v2.4.1
+        uses: ontimize/setup-java-maven-gitAction@v2.4.2
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
