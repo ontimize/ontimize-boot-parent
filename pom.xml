@@ -6,7 +6,7 @@
 
 	<groupId>com.ontimize.boot</groupId>
 	<artifactId>ontimize-boot-parent</artifactId>
-	<version>3.9.0-SNAPSHOT</version>
+	<version>3.10.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -83,7 +83,7 @@
   
 	<properties>
 		<project.dependency.spring.boot.version>2.5.0</project.dependency.spring.boot.version>
-		<project.dependency.ontimize.boot.version>3.9.0-SNAPSHOT</project.dependency.ontimize.boot.version>
+		<project.dependency.ontimize.boot.version>3.10.0-SNAPSHOT</project.dependency.ontimize.boot.version>
 		<project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
 		<project.plugin.ontimize.openapi.generator>1.0.1</project.plugin.ontimize.openapi.generator>
 		<!-- =========================================================== -->
