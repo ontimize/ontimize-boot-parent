@@ -27,7 +27,12 @@ jobs:
       - name: Get framework version to release
         id: version
         run: |
-          var_version=$(mvn help:evaluate -q -Dexpression=project.version -DforceStdout) 
+          var_version=""
+          if  ${{ github.event.inputs.version != '' }}; then
+            var_version=${{ github.event.inputs.version }}
+          else
+            var_version=$(mvn help:evaluate -q -Dexpression=project.version -DforceStdout)
+          fi
           echo "version=$var_version" >> $GITHUB_OUTPUT
       - name: Set author identity
         run: |
