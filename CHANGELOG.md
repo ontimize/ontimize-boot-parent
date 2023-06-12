@@ -1,5 +1,6 @@
-## 3.11.0 - In progress
-### 🚀 Features:
+## 3.11.0 - 12/06/2023
+Generated version due to Ontimize Boot version update.
+<!-- ### 🚀 Features: -->
 <!-- ### 🔧 Bug fixes: -->
 ## 3.10.1 - 21/04/2023
 ### 🔧 Bug fixes:
