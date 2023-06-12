@@ -6,7 +6,7 @@
 
 	<groupId>com.ontimize.boot</groupId>
 	<artifactId>ontimize-boot-parent</artifactId>
-	<version>3.10.1</version>
+	<version>3.11.0</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -83,9 +83,9 @@
 
 	<properties>
 		<project.dependency.spring.boot.version>2.5.0</project.dependency.spring.boot.version>
-		<project.dependency.ontimize.boot.version>3.10.1</project.dependency.ontimize.boot.version>
+		<project.dependency.ontimize.boot.version>3.11.0</project.dependency.ontimize.boot.version>
 		<project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
-		<project.plugin.ontimize.openapi.generator>1.0.1</project.plugin.ontimize.openapi.generator>
+		<project.plugin.ontimize.openapi.generator>1.0.2</project.plugin.ontimize.openapi.generator>
 		<!-- =========================================================== -->
 		<!-- Plugin versions -->
 		<!-- =========================================================== -->
@@ -237,6 +237,18 @@
 		</profile>
 		<profile>
 			<id>generate-version</id>
+			<repositories>
+				<repository>
+					<id>sonatype-snapshot</id>
+					<url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
 			<build>
 				<plugins>
 					<!-- Source -->
@@ -291,13 +303,15 @@
 		<profile>
 			<id>generate-openapi</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
 				<file>
 					<exists>src/main/ontimize/marker-ws-ontimize-openapi-generator</exists>
 				</file>
 			</activation>
 			<properties>
 				<ontimize.openapi.generator.maven.plugin.inputSpec>${project.basedir}/src/main/resources/public${ontimize.openapi.yaml.path}</ontimize.openapi.generator.maven.plugin.inputSpec>
+				<ontimize.openapi.swagger-ui.enabled>false</ontimize.openapi.swagger-ui.enabled>
+				<ontimize.openapi.swagger-ui.path>${project.build.directory}/classes/public/swagger-ui</ontimize.openapi.swagger-ui.path>
+				<ontimize.openapi.swagger-ui.apiUrl>${ontimize.openapi.yaml.path}</ontimize.openapi.swagger-ui.apiUrl>
 			</properties>
 			<build>
 				<plugins>
@@ -332,81 +346,6 @@
 								</configuration>
 							</execution>
 						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>add-swagger-ui</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-				<file>
-					<exists>src/main/ontimize/marker-ws-ontimize-openapi-generator</exists>
-				</file>
-				<property>
-					<name>ontimize.openapi.swagger-ui.enabled</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<properties>
-				<swagger-ui.version>4.18.2</swagger-ui.version>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-dependency-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>add-swagger-ui</id>
-								<phase>generate-sources</phase>
-								<goals>
-									<goal>unpack</goal>
-								</goals>
-								<configuration>
-									<artifactItems>
-										<artifactItem>
-											<groupId>org.webjars</groupId>
-											<artifactId>swagger-ui</artifactId>
-											<version>${swagger-ui.version}</version>
-											<type>jar</type>
-											<overWrite>false</overWrite>
-											<includes>META-INF/resources/webjars/swagger-ui/${swagger-ui.version}/*.*</includes>
-											<fileMappers>
-												<org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
-													<pattern>^\QMETA-INF/resources/webjars/swagger-ui/${swagger-ui.version}/\E</pattern>
-													<replacement>./</replacement>
-												</org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
-											</fileMappers>
-											<outputDirectory>${project.build.directory}/classes/public/swagger-ui</outputDirectory>
-										</artifactItem>
-									</artifactItems>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>com.google.code.maven-replacer-plugin</groupId>
-						<artifactId>replacer</artifactId>
-						<version>1.5.3</version>
-						<executions>
-							<execution>
-								<phase>prepare-package</phase>
-								<goals>
-									<goal>replace</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<ignoreMissingFile>false</ignoreMissingFile>
-							<file>${project.build.directory}/classes/public/swagger-ui/swagger-initializer.js</file>
-							<replacements>
-								<replacement>
-									<token>https://petstore.swagger.io/v2/swagger.json</token>
-									<value>${ontimize.openapi.yaml.path}</value>
-								</replacement>
-							</replacements>
-						</configuration>
 					</plugin>
 				</plugins>
 			</build>
