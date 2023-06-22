@@ -63,7 +63,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USER }}
           password: ${{secrets.EMAIL_PASSWORD}}
-          subject: Nueva versión de Ontimize EE 🚀
+          subject: Nueva versión de Ontimize Boot 🚀
           to: ${{ env.RECIPIENT }}
           from: ${{secrets.EMAIL_USER_FROM}}
           html_body: file://mail_to_send.html
