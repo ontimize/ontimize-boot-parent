@@ -14,11 +14,10 @@ on:
         description: 'Branch'
         type: choice
         required: true
-        default: 'feature/update-mail'
+        default: 'main'
         options:
           - main
           - develop
-          - feature/update-mail
 jobs:
   Send-mail:
     runs-on: ubuntu-latest
@@ -55,7 +54,7 @@ jobs:
           sed '/^## \[.*\] - [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/,$d' trimmed_change.md > current_change.md
           sed '/{{ PH_CHANGELOG }}/Q' ./.github/workflows/resources/mail.html > mail_to_send.html
           echo "## Ontimize Boot" >> mail_to_send.html
-          curl -LJ -o changelog_boot.md https://raw.githubusercontent.com/ontimize/ontimize-boot/develop/CHANGELOG.md
+          curl -LJ -o changelog_boot.md https://raw.githubusercontent.com/ontimize/ontimize-boot/main/CHANGELOG.md
           sed -e '1,/^## \[.*\] - [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/d' changelog_boot.md > trimmed_change_boot.md
           sed '/^## \[.*\] - [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/,$d' trimmed_change_boot.md > current_change_boot.md
           cat current_change_boot.md >> mail_to_send.html
