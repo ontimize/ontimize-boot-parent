@@ -67,4 +67,4 @@ jobs:
           to: ${{ env.RECIPIENT }}
           from: ${{secrets.EMAIL_USER_FROM}}
           html_body: file://mail_to_send.html
-          convert_markdown: true
+          convert_markdown: false
