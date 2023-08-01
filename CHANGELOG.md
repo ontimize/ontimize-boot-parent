@@ -8,8 +8,10 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+## [3.12.0] - 2023-08-01
 ### Changed 🛠️
 * **Changelog**: The structure of the CHANGELOG.md file has been modified so that it follows the structure shown at [keepachangelog](https://keepachangelog.com/).
+* **Send mail action**: Change the new version message. Now includes the changes in the CHANGELOG.md files of Ontimize Boot and Ontimize Boot Parent.
 ## [3.11.0] - 2023-06-12
 ### Changed 🛠️
 * **Versions**:Generated version due to Ontimize Boot version update.
@@ -26,7 +28,8 @@
 ### Changed 🛠️
 * **Updated Ontimize Boot Version**: Update Ontimize Version to 3.9.0.
 
-[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.11.0...HEAD
+[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.12.0...HEAD
+[3.12.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.11.0...3.12.0
 [3.11.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.10.1...3.11.0
 [3.10.1]: https://github.com/ontimize/ontimize-boot-parent/compare/3.10.0...3.10.1
 [3.10.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.9.0...3.10.0
