@@ -8,6 +8,7 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+* **OpenApi**: Add bean validation support.
 ## [3.12.0] - 2023-08-01
 ### Changed 🛠️
 * **Changelog**: The structure of the CHANGELOG.md file has been modified so that it follows the structure shown at [keepachangelog](https://keepachangelog.com/).
