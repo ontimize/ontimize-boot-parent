@@ -8,6 +8,8 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+## [3.13.0] - 2023-11-06
+### Added ✔️
 * **OpenApi**: Add bean validation support.
 ## [3.12.0] - 2023-08-01
 ### Changed 🛠️
@@ -29,7 +31,8 @@
 ### Changed 🛠️
 * **Updated Ontimize Boot Version**: Update Ontimize Version to 3.9.0.
 
-[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.12.0...HEAD
+[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.13.0...HEAD
+[3.13.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.12.0...3.13.0
 [3.12.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.11.0...3.12.0
 [3.11.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.10.1...3.11.0
 [3.10.1]: https://github.com/ontimize/ontimize-boot-parent/compare/3.10.0...3.10.1
