@@ -8,6 +8,8 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+### Changed 🛠️
+* **Send mail action**: Update the mailing action with organizational secrets. Modified the title if the recipient is for testing.
 ## [3.13.0] - 2023-11-06
 ### Added ✔️
 * **OpenApi**: Add bean validation support.
