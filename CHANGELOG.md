@@ -8,6 +8,8 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+### Fixed 🐛
+* **OpenApi**: Fix ignored parameters issue.
 ## [3.14.0] - 2024-02-23
 ### Changed 🛠️
 * **Send mail action**: Update the mailing action with organizational secrets. Modified the title if the recipient is for testing.
