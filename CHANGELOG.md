@@ -12,6 +12,7 @@
 * **OpenApi**: Fix ignored parameters issue.
 ## [3.14.0] - 2024-02-23
 ### Changed 🛠️
+* **OpenAPI:**: Updated Swagger UI to 5.15 version.
 * **Send mail action**: Update the mailing action with organizational secrets. Modified the title if the recipient is for testing.
 ## [3.13.0] - 2023-11-06
 ### Added ✔️
