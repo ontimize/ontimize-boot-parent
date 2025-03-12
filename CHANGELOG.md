@@ -8,8 +8,9 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+## [3.15.0] - 2025-03-12
 ### Changed 🛠️
-* **OpenAPI:**: Updated Swagger UI to 5.15 version.
+* **OpenAPI**: Updated Swagger UI to 5.15 version.
 ### Fixed 🐛
 * **OpenAPI**: Fix ignored parameters issue.
 ## [3.14.0] - 2024-02-23
@@ -38,7 +39,8 @@
 ### Changed 🛠️
 * **Updated Ontimize Boot Version**: Update Ontimize Version to 3.9.0.
 
-[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.14.0...HEAD
+[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.0...HEAD
+[3.15.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.14.0...3.15.0
 [3.14.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.13.0...3.14.0
 [3.13.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.12.0...3.13.0
 [3.12.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.11.0...3.12.0
