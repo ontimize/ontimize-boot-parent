@@ -6,7 +6,7 @@
 
 	<groupId>com.ontimize.boot</groupId>
 	<artifactId>ontimize-boot-parent</artifactId>
-	<version>3.15.2</version>
+	<version>3.15.3</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -70,20 +70,9 @@
 		<url>https://github.com/ontimize/ontimize-boot-parent/tree/master</url>
 	</scm>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
-
 	<properties>
 		<project.dependency.spring.boot.version>2.5.0</project.dependency.spring.boot.version>
-		<project.dependency.ontimize.boot.version>3.15.2</project.dependency.ontimize.boot.version>
+		<project.dependency.ontimize.boot.version>3.15.3</project.dependency.ontimize.boot.version>
 		<project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
 		<project.plugin.ontimize.openapi.generator>1.2.0</project.plugin.ontimize.openapi.generator>
 		<!-- =========================================================== -->
@@ -91,6 +80,7 @@
 		<!-- =========================================================== -->
 		<deploy.plugin.version>3.0.0-M1</deploy.plugin.version>
 		<source.plugin.version>3.2.1</source.plugin.version>
+		<central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
 		<!-- =========================================================== -->
 		<!-- Sonar -->
 		<!-- =========================================================== -->
@@ -131,11 +121,6 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>${deploy.plugin.version}</version>
-				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
@@ -207,8 +192,8 @@
 			</activation>
 			<repositories>
 				<repository>
-					<id>sonatype-snapshot</id>
-					<url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+					<id>central-portal-snapshots</id>
+					<url>https://central.sonatype.com/repository/maven-snapshots/</url>
 					<releases>
 						<enabled>false</enabled>
 					</releases>
@@ -239,8 +224,8 @@
 			<id>generate-version</id>
 			<repositories>
 				<repository>
-					<id>sonatype-snapshot</id>
-					<url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+					<id>central-portal-snapshots</id>
+					<url>https://central.sonatype.com/repository/maven-snapshots/</url>
 					<releases>
 						<enabled>false</enabled>
 					</releases>
@@ -262,14 +247,13 @@
 						<artifactId>maven-javadoc-plugin</artifactId>
 					</plugin>
 					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.7</version>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>${central-publishing-maven-plugin.version}</version>
 						<extensions>true</extensions>
 						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+							<publishingServerId>central</publishingServerId>
+							<autoPublish>true</autoPublish>
 						</configuration>
 					</plugin>
 					<plugin>
