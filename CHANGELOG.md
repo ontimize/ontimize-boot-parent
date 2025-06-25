@@ -9,6 +9,9 @@
 
 ## [Unreleased]
 ## [3.15.3] - 2025-06-25
+* **Updated Ontimize Boot Version**: Update Ontimize Version to 3.15.3.
+## [3.15.2] - 2025-04-28
+* **Updated Ontimize Boot Version**: Update Ontimize Version to 3.15.2.
 ## [3.15.1] - 2025-04-11
 ### Changed 🛠️
 * **EE Version**: Update Ontimize EE version to 5.12.1
@@ -44,7 +47,8 @@
 * **Updated Ontimize Boot Version**: Update Ontimize Version to 3.9.0.
 
 [unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.3...HEAD
-[3.15.3]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.0...3.15.3
+[3.15.3]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.2...3.15.3
+[3.15.2]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.1...3.15.2
 [3.15.1]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.0...3.15.1
 [3.15.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.14.0...3.15.0
 [3.14.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.13.0...3.14.0
