@@ -8,6 +8,7 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+* **EE Version**: Update Ontimize EE version to 5.13.0
 ## [3.15.3] - 2025-06-25
 * **Updated Ontimize Boot Version**: Update Ontimize Version to 3.15.3.
 ## [3.15.2] - 2025-04-28
