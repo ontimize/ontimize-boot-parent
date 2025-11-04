@@ -72,7 +72,7 @@
 
 	<properties>
 		<project.dependency.spring.boot.version>2.5.0</project.dependency.spring.boot.version>
-		<project.dependency.ontimize.boot.version>3.17.0-SNAPSHOT</project.dependency.ontimize.boot.version>
+		<project.dependency.ontimize.boot.version>3.17.0</project.dependency.ontimize.boot.version>
 		<project.dependency.spring.cloud.version>Greenwich.RELEASE</project.dependency.spring.cloud.version>
 		<project.plugin.ontimize.openapi.generator>1.2.0</project.plugin.ontimize.openapi.generator>
 		<!-- =========================================================== -->
