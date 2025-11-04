@@ -8,6 +8,7 @@
 <!-- Este fichero sigue el formato de https://keepachangelog.com -->
 
 ## [Unreleased]
+## [3.17.0] - 2025-11-04
 ## [3.16.0] - 2025-09-12
 ### Changed 🛠️
 * **Updated Ontimize Boot Version**: Update Ontimize EE version to 5.13.0
@@ -51,7 +52,8 @@
 ### Changed 🛠️
 * **Updated Ontimize Boot Version**: Update Ontimize Version to 3.9.0.
 
-[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.16.0...HEAD
+[unreleased]: https://github.com/ontimize/ontimize-boot-parent/compare/3.17.0...HEAD
+[3.17.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.16.0...3.17.0
 [3.16.0]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.3...3.16.0
 [3.15.3]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.2...3.15.3
 [3.15.2]: https://github.com/ontimize/ontimize-boot-parent/compare/3.15.1...3.15.2
