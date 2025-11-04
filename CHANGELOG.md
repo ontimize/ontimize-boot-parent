@@ -9,6 +9,7 @@
 
 ## [Unreleased]
 ## [3.17.0] - 2025-11-04
+* **Updated Ontimize Boot Version**: Update Ontimize EE version to 5.14.0
 ## [3.16.0] - 2025-09-12
 ### Changed 🛠️
 * **Updated Ontimize Boot Version**: Update Ontimize EE version to 5.13.0
